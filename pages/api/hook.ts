@@ -16,6 +16,13 @@ const smartapp = new SmartApp()
               .permissions('rx')
               .multiple(true);
       });
+      page.section('lock', section => {
+        section
+            .deviceSetting('locl')
+            .capabilities(['lock'])
+            .permissions('rx')
+            .multiple(true);
+    });
   })
   // Called for both INSTALLED and UPDATED lifecycle events if there is no separate installed() handler
   .updated(async (context, updateData) => {
